@@ -15,7 +15,7 @@ type Post = {
 export const PostItem = ({ post }: { post: Post }) => {
   return (
   <div className="rounded-2xl w-60 overflow-hidden transform transition duration-300 
-                  hover:scale-105 shadow-lg shadow-purple-500/50 hover:shadow-2xl hover:shadow-purple-600/70">
+                  hover:scale-105 shadow-lg shadow-purple-500/50 hover:shadow-2xl hover:shadow-white-600/70">
     {/* Image */}
     <Link to={`/posts/${post.id}`}>
     {post.image_url && (

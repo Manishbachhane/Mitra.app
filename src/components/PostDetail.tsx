@@ -35,18 +35,19 @@ export const PostDetail = ({ postId }: Prop) => {
   }
 
   return (
-    <div className="bg-gray-800 p-6 flex h-64 rounded-lg shadow-lg">
+    <div className="bg-gradient-to-r from-violet-700 to-indigo-900 p-6 flex w-1/2 h-64 rounded-lg shadow-lg">
       <div className="mr-6 flex-shrink-0 bg-black rounded-lg overflow-hidden">
-        <img src={data?.image_url} alt={data?.title} className="w-full h-full object-cover mb-4" />
+        <img src={data?.image_url} alt={data?.title} className="w-48 h-full object-cover mb-4" />
       </div>
       <div>
-          <h2 className="text-2xl font-bold text-white mb-4">{data?.title}</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">{data?.title}</h2>
       <p className="text-gray-300 mb-4">{data?.content}</p>
-      <p className="text-gray-500">
+      <p className="text-gray-300">
         Posted on: {data?.created_at ? new Date(data.created_at).toLocaleDateString() : "Unknown date"}
       </p>
       </div>
     </div>
   );
 };
+
 
