@@ -63,7 +63,7 @@ export const PostList = () => {
         </div>
       ) : (
         <div className="text-center text-gray-400 py-10">
-          No posts available. Be the first to create one! 🚀
+          No posts available. Be the first to create one!
         </div>
       )}
     </div>

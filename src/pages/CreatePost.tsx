@@ -48,13 +48,13 @@ export default function CreatePost() {
   const { mutate, status } = useMutation({
     mutationFn: createPost,
     onSuccess: () => {
-      setMessage({ type: "success", text: "✅ Post created successfully!" });
+      setMessage({ type: "success", text: " Post created successfully!" });
       setTitle("");
       setContent("");
       setImageFile(null);
     },
     onError: (err: Error) => {
-      setMessage({ type: "error", text: `❌  ${err.message}` });
+      setMessage({ type: "error", text: `  ${err.message}` });
     },
   });
 
@@ -69,10 +69,10 @@ export default function CreatePost() {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (!title.trim()) {
-      setMessage({ type: "error", text: "❌ Title is required" });
+      setMessage({ type: "error", text: " Title is required" });
       return;
     }
-    mutate({ post: { title, content }, imageFile }); // ✅ sahi call
+    mutate({ post: { title, content }, imageFile }); // Call the mutation
   };
 
   return (
@@ -130,9 +130,8 @@ export default function CreatePost() {
 
       {message && (
         <p
-          className={`mt-2 text-sm ${
-            message.type === "error" ? "text-red-400" : "text-green-400"
-          }`}
+          className={`mt-2 text-sm ${message.type === "error" ? "text-red-400" : "text-green-400"
+            }`}
         >
           {message.text}
         </p>
@@ -140,4 +139,3 @@ export default function CreatePost() {
     </form>
   );
 }
-  
