@@ -8,6 +8,9 @@ interface Post {
   content: string;
   created_at: string;
   image_url?: string;
+  avatar_url?: string;
+  like_count: number;
+  comment_count: number;
 }
 
 const fetchPosts = async (): Promise<Post[]> => {
@@ -48,7 +51,7 @@ export const PostList = () => {
   }
 
   return (
-    <div className="my-8 mx-auto max-w-7xl px-4">
+    <div className="my-4 mx-auto max-w-full px-4">
       {/* Title */}
       <h2 className="text-3xl md:text-4xl font-bold text-purple-600 text-center mb-10">
         Recent Posts
@@ -56,7 +59,7 @@ export const PostList = () => {
 
       {/* Posts Grid */}
       {data && data.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 place-items-center">
+        <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 place-items-center">
           {data.map((post) => (
             <PostItem key={post.id} post={post} />
           ))}
