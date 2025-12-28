@@ -12,7 +12,7 @@ export default function Navbar() {
   return (
     <nav className="fixed w-full z-50 bg-black/30 backdrop-blur-lg border-b border-white/10 shadow-md">
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
-        
+
         {/* Logo */}
         <div className="flex items-center">
           <Link to="/" className="font-mono text-2xl font-bold text-white tracking-wide">
@@ -24,28 +24,28 @@ export default function Navbar() {
         <div className="hidden md:flex items-center space-x-6">
           <Link to="/" className="text-gray-300 hover:text-purple-400 transition-colors">Home</Link>
           <Link to="/create" className="text-gray-300 hover:text-purple-400 transition-colors">Create Post</Link>
-          <Link to="/community" className="text-gray-300 hover:text-purple-400 transition-colors">Community</Link>
+          <Link to="/communities" className="text-gray-300 hover:text-purple-400 transition-colors">Community</Link>
           <Link to="/community/create" className="text-gray-300 hover:text-purple-400 transition-colors">Create Community</Link>
 
           {/* GitHub / User Info */}
           {user ? (
             <div className="flex items-center space-x-3 bg-gray-900/70 px-4 py-1.5 rounded-full border border-gray-700">
-              <img 
-                src={avatar} 
-                alt="profile" 
+              <img
+                src={avatar}
+                alt="profile"
                 className="w-8 h-8 rounded-full border border-gray-600"
               />
               <span className="text-gray-200 text-sm">{displayName}</span>
-              <button 
-                onClick={signOut} 
+              <button
+                onClick={signOut}
                 className="ml-2 text-sm text-red-400 hover:text-white transition-colors"
               >
                 Logout
               </button>
             </div>
           ) : (
-            <button 
-              onClick={signInWithGitHub} 
+            <button
+              onClick={signInWithGitHub}
               className="flex items-center gap-2 text-white bg-gray-800 px-3 py-1.5 rounded-md hover:bg-purple-600 transition-colors"
             >
               <FaGithub className="w-5 h-5" /> <span>Sign in</span>
@@ -85,9 +85,9 @@ export default function Navbar() {
             {/* Auth Buttons in Mobile */}
             {user ? (
               <div className="flex items-center gap-2 px-4 py-2 border-t border-gray-700">
-                <img 
-                  src={avatar} 
-                  alt="profile" 
+                <img
+                  src={avatar}
+                  alt="profile"
                   className="w-8 h-8 rounded-full border border-gray-600"
                 />
                 <span className="text-gray-200 text-sm">{displayName}</span>

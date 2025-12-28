@@ -3,6 +3,8 @@ import Home from './pages/Home'
 import Navbar from './components/Navbar'
 import CreatePostPage from './pages/CreatePostPage'
 import { PostPages } from './pages/PostPages'
+import CreateCommunityPage from './pages/CreateCommunityPage'
+import { CommunityList } from './components/CommunityList'
 
 function App() {
 
@@ -15,6 +17,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/create" element={<CreatePostPage />} />
             <Route path="/posts/:id" element={<PostPages />} />
+            <Route path="/community/create" element={<CreateCommunityPage />} />
+            <Route path="/communities" element={<CommunityList />} />
           </Routes>
         </div>
       </div>
